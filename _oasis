@@ -10,6 +10,7 @@ AlphaFeatures: pure_interface
 Executable "trial"
   Path:    src/
   MainIs: handle.ml
+  CompiledObject: best
   BuildTools: ocamlbuild
   Install: false
   BuildDepends: glical,
