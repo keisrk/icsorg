@@ -1,7 +1,7 @@
 OASISFormat: 0.4
-Name:        icalendar
+Name:        icsorg
 Version:     0.0.1
-Synopsis:    iCalendar client
+Synopsis:    Handle iCalendar (.ics) and Org-mode (.org) files
 Authors:     Kei Shirakizawa
 License:     LGPL-3.0 with OCaml linking exception
 Plugins:     META (0.4)
@@ -9,7 +9,7 @@ AlphaFeatures: pure_interface
 
 Executable "trial"
   Path:    src/
-  MainIs: trial.ml
+  MainIs: handle.ml
   BuildTools: ocamlbuild
   Install: false
   BuildDepends: glical,

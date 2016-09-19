@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 7d9cc9f34d0cf090f033a6cfdb3b3c05)
+# DO NOT EDIT (digest: 90437ea761459e5ab653a279ad564017)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -15,9 +15,9 @@ true: annot, bin_annot
 "_darcs": -traverse
 "_darcs": not_hygienic
 # Executable trial
-"src/trial.byte": pkg_calendar
-"src/trial.byte": pkg_glical
-"src/trial.byte": pkg_oUnit
+"src/handle.byte": pkg_calendar
+"src/handle.byte": pkg_glical
+"src/handle.byte": pkg_oUnit
 <src/*.ml{,i,y}>: pkg_calendar
 <src/*.ml{,i,y}>: pkg_glical
 <src/*.ml{,i,y}>: pkg_oUnit
