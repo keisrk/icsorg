@@ -145,14 +145,16 @@ let rec clean = function
                       Ical.Assoc(l, k, p, newv)
      | _ -> a
 
-let _ =
-  let f_in = Sys.argv.(1) in
-  let f = file_contents f_in in
-  let i = f |> Lexing.lex_ical |> parse_ical in
-  let is_clean = try Sys.argv.(2) with Invalid_argument _ ->
-                   begin
-                     List.iter show_entry (collect [] i);
-                     ""
-                   end
-  in if String.equal is_clean "-clean" then Printf.printf "%s" (to_string (List.map clean i))
-     else failwith "Please provide ~arg1: <.ics file path>, ~arg2: -clean \n"
+let is_clean =
+  let arg = try Sys.argv.(1) with
+              Invalid_argument _ -> "" in
+  String.equal arg "-clean"
+
+let ics_org i = List.iter show_entry (collect [] i)
+let ics_clean i = Printf.printf "%s" (to_string (List.map clean i))
+
+let _ = 
+  let s = channel_contents stdin in
+  let i = s |> Lexing.lex_ical |> parse_ical in
+  if is_clean then ics_clean i
+  else ics_org i
